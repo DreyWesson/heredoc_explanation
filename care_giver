@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <dog_instructions_file>"
+    exit 1
+fi
+
+# Here Document with instructions for the dog
+cat > instructions.txt <<-EOF
+Walk the dog in the park.
+Feed the dog some treats.
+Give the dog fresh water.
+EOF
+
+# Call the dog script with the instructions file
+./dog.sh "$1"
